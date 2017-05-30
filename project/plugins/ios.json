@@ -1,0 +1,48 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-actionsheet": {
+            "PACKAGE_NAME": "br.com.fivemob.Fivemob"
+        },
+        "cordova-plugin-camera": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "br.com.fivemob.Fivemob"
+        },
+        "br.com.alamoweb.imagepicker": {
+            "PHOTO_LIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "br.com.fivemob.Fivemob"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "br.com.fivemob.Fivemob"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "br.com.fivemob.Fivemob"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "br.com.fivemob.Fivemob"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "br.com.fivemob.Fivemob"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "br.com.fivemob.Fivemob"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "br.com.fivemob.Fivemob"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "br.com.fivemob.Fivemob"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "br.com.fivemob.Fivemob"
+        }
+    },
+    "dependent_plugins": {}
+}

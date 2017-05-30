@@ -1,0 +1,18 @@
+<ion-view view-title="Contas Integradas">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div class="content has-header">
+
+            <div class="list animate-fade-slide-in-right">
+
+                <div class="item item-avatar item-icon-right account-item" ng-repeat="account in accounts">
+                  <img src="{{account.image}}">
+                  <h2>{{account.name}}</h2>
+                  <i class="icon ion-check muted" ng-click="disable($index)" ng-if="account.enabled"></i>
+                  <i class="icon ion-power muted" ng-click="enable($index)" ng-if="!account.enabled"></i>
+                </div>
+
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

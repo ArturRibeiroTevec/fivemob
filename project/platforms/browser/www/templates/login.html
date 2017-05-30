@@ -1,0 +1,17 @@
+<ion-view view-title="Login" align-title="left">
+    <ion-content id="login-content" style="background: url(img/login.jpg) center; background-size: cover;">
+        <div class="hero no-header flat">
+            <div class="content">
+                <h1>FIVEMOB</h1>
+            </div>
+        </div>
+        <div class="list">
+            <ion-md-input class="input-width-fix" placeholder="E-mail" highlight-color="balanced" type="email" ng-model="formLogin.email"></ion-md-input>
+            <ion-md-input class="input-width-fix" placeholder="Senha" highlight-color="energized" type="password" ng-model="formLogin.password"></ion-md-input>
+        </div>
+        <div class="padding">
+            <!-- <button ui-sref="app.properties" class="button button-full button-green ink">Login</button> -->
+            <button ng-click="verifyLogin()" class="button button-full button-green ink">Login</button>
+        </div>
+    </ion-content>
+</ion-view>

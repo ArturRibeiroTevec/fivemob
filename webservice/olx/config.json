@@ -1,0 +1,6 @@
+{
+	"client_id":"465d6acf88a53e4aa55d3be8fbff91b98cfad5f8",
+	"client_secret": "ab8e98dbc96cb2363db18b521b9588d6",
+	"scope":"basic_user_info autoupload",
+	"redirect_uri":"http://www.squarefive.com.br/webservice/olx/"
+}

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "olxbr/olx-api-client": "^0.1.2"
+    }
+}

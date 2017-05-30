@@ -1,0 +1,40 @@
+<ion-view view-title="Imóveis">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+        
+        <div class="item card-item" ng-repeat="propertie in properties">
+            <div class="card stable-bg ink ink-dark">
+                <div class="item">
+                    <h2>{{propertie.propertie.title}}</h2>
+                    <p>{{propertie.propertie.street}}, {{propertie.propertie.number}},<span ng-if="propertie.propertie.complement"> {{propertie.propertie.complement}},</span> {{propertie.propertie.neighborhood}}, {{propertie.propertie.city}}, {{propertie.propertie.state}} - {{propertie.propertie.zipcode}}</p>
+                </div>
+                <div class="item item-image">
+                    <img ng-if="propertie.propertie.images.length > 0" src="{{propertie.propertie.images[0]}}">
+                </div>
+                <div class="item">
+                    <div class="row">
+                        <div class="col" align="center">
+                            <button class="button button-clear button-positive" ng-click="editPropertie($index)">
+                                Editar
+                            </button>
+                        </div>
+                        <div class="col" align="center">
+                            <button class="button button-clear button-assertive" ng-click="deletePropertie($index)">
+                                Excluir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="properties.length <= 0">
+            <div style="margin-top: 50px;" align="center" ng-click="addNewPropertie()">
+                Você não possui nenhum imóvel cadastrado até o momento.
+                <br>
+                <u>Adicione um agora mesmo!</u>
+            </div>
+        </div>
+        
+        <div class="spacer-70"></div>
+    </ion-content>
+</ion-view>

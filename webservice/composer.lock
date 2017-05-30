@@ -1,0 +1,65 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "29c2bc1b111eca4488ff56963a68a30d",
+    "packages": [
+        {
+            "name": "olxbr/olx-api-client",
+            "version": "v0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/olxbr/olx-api-client.git",
+                "reference": "e227fb9143a1094ba983f20323747e662ab921ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/olxbr/olx-api-client/zipball/e227fb9143a1094ba983f20323747e662ab921ef",
+                "reference": "e227fb9143a1094ba983f20323747e662ab921ef",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.5.*@dev",
+                "phpunit/phpunit": "4.7.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OlxApiClient\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/olxbr/olx-api-client/graphs/contributors"
+                }
+            ],
+            "description": "Client library for Olx API using OAuth2",
+            "keywords": [
+                "api",
+                "bomnegocio",
+                "oauth",
+                "olx"
+            ],
+            "time": "2015-09-08T21:22:07+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

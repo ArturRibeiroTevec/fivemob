@@ -1,0 +1,7 @@
+{
+  "name": "Fivemob",
+  "app_id": "e095cab8",
+  "watchPatterns": [
+    "www/*"
+  ]
+}

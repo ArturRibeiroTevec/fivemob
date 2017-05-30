@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="br.com.fivemob.Fivemob" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Camera">
+        <param name="browser-package" value="Camera" />
+    </feature>
+    <feature name="Device">
+        <param name="browser-package" value="Device" />
+    </feature>
+    <name>FIVEMOB</name>
+    <description>
+    FIVEMOB
+  </description>
+    <author email="alamo@alamoweb.com.br" href="http://alamoweb.com.br/">
+    FIVEMOB
+  </author>
+    <content src="index.html" />
+    <allow-navigation href="http://*/*" />
+    <allow-intent href="*" />
+    <access origin="*" />
+    <icon src="resources/ios/icon/icon-small@3x.png" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="true" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="orientation" value="portrait" />
+</widget>

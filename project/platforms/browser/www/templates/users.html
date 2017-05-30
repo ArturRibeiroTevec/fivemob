@@ -1,0 +1,19 @@
+<ion-view view-title="Usuários">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div class="content has-header">
+            <div class="list animate-fade-slide-in-right">
+                
+                <div class="item item-avatar item-icon-right" ng-repeat="user in users">
+                    <img src="img/default-picture.png">
+                    <h2>{{user.name}}</h2>
+                    <p><b>E-mail:</b> {{user.email}}</p>
+                    <p><span ng-if="user.admin"><u>Administrador</u></span> <span ng-if="user.realtor">Corretor</span></p>
+                    <i class="icon ion-edit muted" ng-click="editUser($index)" ng-if="mainUser.admin"></i>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="spacer-70"></div>
+    </ion-content>
+</ion-view>

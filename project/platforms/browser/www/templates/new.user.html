@@ -1,0 +1,28 @@
+<ion-view view-title="Novo Usuário">
+    <ion-content ng-class="{expanded:$scope.isExpanded}" id="newuser-content">
+        <div class="item card-item form-card">
+            <h2>Dados do Usuário</h2>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Nome</span>
+                    <input type="text" ng-model="newUserForm.name" class="field-user-name">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">E-mail</span>
+                    <input type="email" ng-model="newUserForm.email" class="field-user-email">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Senha</span>
+                    <input type="password" ng-model="newUserForm.password" class="field-user-password">
+                </label>
+
+                <ion-checkbox ng-model="newUserForm.admin">Administrador</ion-checkbox>
+                <ion-checkbox ng-model="newUserForm.realtor">Corretor</ion-checkbox>
+            </div>
+        </div>
+
+        <div class="spacer-70"></div>
+    </ion-content>
+</ion-view>

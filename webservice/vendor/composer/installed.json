@@ -1,0 +1,51 @@
+[
+    {
+        "name": "olxbr/olx-api-client",
+        "version": "v0.1.2",
+        "version_normalized": "0.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/olxbr/olx-api-client.git",
+            "reference": "e227fb9143a1094ba983f20323747e662ab921ef"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/olxbr/olx-api-client/zipball/e227fb9143a1094ba983f20323747e662ab921ef",
+            "reference": "e227fb9143a1094ba983f20323747e662ab921ef",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*"
+        },
+        "require-dev": {
+            "mikey179/vfsstream": "1.5.*@dev",
+            "phpunit/phpunit": "4.7.*",
+            "satooshi/php-coveralls": "dev-master"
+        },
+        "time": "2015-09-08T21:22:07+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "OlxApiClient\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Contributors",
+                "homepage": "https://github.com/olxbr/olx-api-client/graphs/contributors"
+            }
+        ],
+        "description": "Client library for Olx API using OAuth2",
+        "keywords": [
+            "api",
+            "bomnegocio",
+            "oauth",
+            "olx"
+        ]
+    }
+]

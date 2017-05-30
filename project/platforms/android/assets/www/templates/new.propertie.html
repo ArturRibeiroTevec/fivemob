@@ -1,0 +1,325 @@
+<ion-view view-title="Novo Imóvel">
+    <ion-content ng-class="{expanded:$scope.isExpanded}" id="newpropertie-content">
+        <div ng-show="newPropertieForm.images.length > 0" id="newpropertie-images" align="center">
+            <div class="newpropertie-image-item" ng-repeat="image in newPropertieForm.images" style="width: {{image_item_size}}; height: {{image_item_size}};" on-hold="deleteImage($index)">
+                <img src="{{image.source || 'data:image/jpeg;base64,' + image.base64}}" style="width: {{image_item_inner_size}} !important; height: {{image_item_inner_size}} !important;">
+            </div>
+        </div>
+
+        <button ng-click="selectPhotos()" class="button button-block button-positive ink"><i class="icon ion-images"></i> Adicionar Fotos</button>
+
+        <div class="item card-item form-card">
+            <h2>Cliente</h2>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Nome</span>
+                    <input type="text" ng-model="newPropertieForm.client.name" class="field-client-name">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">E-mail</span>
+                    <input type="email" ng-model="newPropertieForm.client.email" class="field-client-email">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Telefone</span>
+                    <input type="tel" ng-model="newPropertieForm.client.phone" ui-br-phone-number>
+                </label>
+                
+                <ion-checkbox ng-model="newPropertieForm.client.hide">Esconder dados do cliente?</ion-checkbox>
+            </div>
+        </div>
+
+        <div class="item card-item form-card">
+            <h2>Imóvel</h2>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Títlulo</span>
+                    <input type="text" ng-model="newPropertieForm.propertie.title" class="field-propertie-title">
+                </label>
+
+                <div class="row no-padding-all">
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Rua</span>
+                            <input type="text" ng-model="newPropertieForm.propertie.street" class="field-propertie-street">
+                        </label>
+                    </div>
+                    <div class="col col-33">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Número</span>
+                            <input type="text" ng-model="newPropertieForm.propertie.number" class="field-propertie-number">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row no-padding-all">
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Complemento</span>
+                            <input type="text" ng-model="newPropertieForm.propertie.complement">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Bairro</span>
+                            <input type="text" ng-model="newPropertieForm.propertie.neighborhood" class="field-propertie-neighborhood">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row no-padding-all">
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Cidade</span>
+                            <input type="text" ng-model="newPropertieForm.propertie.city" class="field-propertie-city">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Estado</span>
+                            <input type="text" ng-model="newPropertieForm.propertie.state" class="field-propertie-state">
+                        </label>
+                    </div>
+                </div>
+
+                <label class="item item-input item-stacked-label margin-bottom-10">
+                    <span class="input-label">CEP</span>
+                    <input type="tel" ng-model="newPropertieForm.propertie.zipcode" class="field-propertie-zipcode" ui-br-cep-mask>
+                </label>
+
+                <label class="item item-input item-select margin-bottom-10">
+                    <div class="row no-padding-all">
+                        <div class="input-label col">
+                            Formato
+                        </div>
+                        <select class="col field-propertie-format" ng-model="newPropertieForm.propertie.format" ng-options="format.slug as format.name for format in formats"></select>
+                    </div>
+                </label>
+
+                <label class="item item-input item-select margin-bottom-10">
+                    <div class="row no-padding-all">
+                        <div class="input-label col">
+                            Tipo
+                        </div>
+                        <select class="col field-propertie-type" ng-model="newPropertieForm.propertie.type" ng-options="type.slug as type.name for type in types"></select>
+                    </div>
+                </label>
+                
+                <div class="row no-padding-all">
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Metragem Útil (metros)</span>
+                            <input type="tel" ng-model="newPropertieForm.propertie.m_util" class="field-propertie-m_util" ui-number-mask>
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Metragem Total (metros)</span>
+                            <input type="tel" ng-model="newPropertieForm.propertie.m_total" class="field-propertie-m_total" ui-number-mask>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row no-padding-all">
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Dormitórios</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.bedrooms">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Salas</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.rooms">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Cozinhas</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.kitchens">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row no-padding-all">
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Suítes</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.suites">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Vagas</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.vacancies">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Lavabos</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.washbasins">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row no-padding-all">
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">WC</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.bathrooms">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Áreas de Serviços</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.services_areas">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Depend. de Empregadas</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.housekeepers">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row no-padding-all">
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Escritórios</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.offices">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Churrasqueiras</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.grills">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Quintais</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.backyards">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row no-padding-all">
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Closets</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.closets">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Móv. Planejados</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.furnitures">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Edículas</span>
+                            <input type="number" ng-model="newPropertieForm.propertie.edicules">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item card-item form-card">
+            <h2>Valores</h2>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Valor do Aluguel</span>
+                    <input type="tel" ng-model="newPropertieForm.values.rental_value" class="field-values-rental_value" ui-money-mask>
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Valor de Venda</span>
+                    <input type="tel" ng-model="newPropertieForm.values.sale_value" class="field-values-sale_value" ui-money-mask>
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Valor do IPTU</span>
+                    <input type="tel" ng-model="newPropertieForm.values.iptu_value" class="field-values-iptu_value" ui-money-mask>
+                </label>
+            </div>
+        </div>
+
+        <div class="item card-item form-card">
+            <h2>Proximidade com</h2>
+            <div class="list">
+                <ion-checkbox ng-model="newPropertieForm.near.subway">Metrô</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.near.schools">Escola</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.near.bus_stations">Ponto de Ônibus</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.near.hospitals">Hospital</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.near.markets">Supermercado</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.near.backeries">Padaria</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.near.airports">Aeroporto</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.near.roads">Rodoviária</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.near.shoppings">Shopping</ion-checkbox>
+            </div>
+        </div>
+
+        <div class="item card-item form-card">
+            <h2>Condomínio</h2>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Nome</span>
+                    <input type="text" ng-model="newPropertieForm.condominium.name" class="field-condominium-name">
+                </label>
+
+                <ion-checkbox ng-model="newPropertieForm.condominium.recreation_area">Área de Lazer</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.party_room">Salão de Festas</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.sport_court">Quadra</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.gym">Academia</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.concierge">Portaria</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.steam_room">Sauna</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.garden">Jardim</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.laundry">Lavanderia</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.balcony">Sacada</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.pool">Piscina</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.gourmet">Terraço Gourmet</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.cold_floor">Piso Frio</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.laminate_floor">Piso Laminado</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.porcelain_floor">Piso Porcelanato</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.wood_floor">Piso de Madeira</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.large_airy">Amplo e Arejado</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.great_location">Ótima localização</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.big_comfy">Cômodos Grandes</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.new">Novo</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.condominium.good_lighting">Boa iluminação</ion-checkbox>
+            </div>
+        </div>
+
+        <div class="item card-item form-card">
+            <h2>Publicar em</h2>
+            <div class="list">
+                <ion-checkbox ng-model="newPropertieForm.publish.imovelweb">Imóvelweb</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.publish.olx">OLX</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.publish.zapimoveis">ZAPImóveis</ion-checkbox>
+                <ion-checkbox ng-model="newPropertieForm.publish.vivareal">Vivareal</ion-checkbox>
+            </div>
+        </div>
+
+        <div class="item card-item form-card">
+            <h2>Corretores</h2>
+            <div class="list">
+                <ion-checkbox ng-repeat="realtor in realtors" ng-model="newPropertieForm.realtors[realtor.id_user]">{{realtor.name}}</ion-checkbox>
+            </div>
+        </div>
+
+        <div class="item card-item form-card">
+            <h2>Descrição Final:</h2>
+            <div class="list">
+                <label class="item item-input">
+                    <textarea ng-model="newPropertieForm.propertie.description" class="field-propertie-description" rows="15"></textarea>
+                </label>
+            </div>
+        </div>
+
+        <div class="spacer-70"></div>
+    </ion-content>
+</ion-view>
